@@ -1,0 +1,11 @@
+$main_font: 'futura', sans-serif;
+
+$main_color: #ffffff;
+$font_color: #000000;
+$title_color: #262626;;
+$bg_color: #FFFFFF;
+
+@mixin display-flex {
+    display: flex;
+    justify-content: center;
+}

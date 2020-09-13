@@ -17,16 +17,16 @@ try {
     $mail->SMTPAuth   = true;
 
     // Настройки вашей почты
-    $mail->Host       = 'smtp.yandex.ru'; // SMTP сервера GMAIL
-    $mail->Username   = 'bubunya'; // Логин на почте
-    $mail->Password   = 'Mrad1da$'; // Пароль на почте
+    $mail->Host       = ''; // SMTP сервера GMAIL
+    $mail->Username   = ''; // Логин на почте
+    $mail->Password   = ''; // Пароль на почте
     $mail->SMTPSecure = 'ssl';
     $mail->Port       = 465;
-    $mail->setFrom('bubunya@yandex.ru', 'Аренда помещения'); // Адрес самой почты и имя отправителя
+    $mail->setFrom('test@test.ru', 'Аренда помещения'); // Адрес самой почты и имя отправителя
 
     // Получатель письма
-    $mail->addAddress('bubunya@yandex.ru');  
-    $mail->addAddress('zk@videofabrika.ru'); // Ещё один, если нужен
+    $mail->addAddress('');  
+    $mail->addAddress(''); // Ещё один, если нужен
 
 //     // Прикрипление файлов к письму
 // if (!empty($_FILES['myfile']['name'][0])) {

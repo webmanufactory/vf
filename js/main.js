@@ -23,27 +23,70 @@ $(document).ready(function(){
               }
             }
           ]
-
     });
     
-    var menuBtn = $('.header__menu');
-    var menu    = $('.menu__submenu');
-  
-    menuBtn.on('click', function() {
-        if ( menu.hasClass('menu__submenu--active') ) {
-            menu.removeClass('menu__submenu--active');
-            $('.header__menu-burger:nth-child(1)').css('transform','translateY(0) rotate(0)');
-            $('.header__menu-burger:nth-child(2)').css('transform','rotate(0)');
-            $('.header__menu-burger:nth-child(3)').css({'transform': 'translateY(0)','opacity':'1'});
-            $('body').css('overflow' , 'auto');
-        } else {
-            menu.addClass('menu__submenu--active');
-            $('.header__menu-burger:nth-child(1)').css('transform','translateY(10px) rotate(45deg)');
-            $('.header__menu-burger:nth-child(2)').css('transform','rotate(-45deg)');
-            $('.header__menu-burger:nth-child(3)').css({'transform': 'translateY(10px)','opacity':'0'});
-            $('body').css('overflow' , 'hidden');
-        }
+    $(".to_form").click(function() {
+      $('html, body').animate({
+          scrollTop: $("#form-box").offset().top 
+      }, 1000);
     });
 
-
+    $(".to_plan").click(function() {
+      $('html, body').animate({
+          scrollTop: $("#plan").offset().top 
+      }, 1000);
+    });
+    
 });
+
+function findVideos() {
+  let videos = document.querySelectorAll('.video');
+
+  for (let i = 0; i < videos.length; i++) {
+      setupVideo(videos[i]);
+  }
+}
+
+function setupVideo(video) {
+  let link = video.querySelector('.video__link');
+  let media = video.querySelector('.video__media');
+  let button = video.querySelector('.video__button');
+  let id = parseMediaURL(media);
+
+  video.addEventListener('click', () => {
+      let iframe = createIframe(id);
+
+      link.remove();
+      button.remove();
+      video.appendChild(iframe);
+  });
+
+  link.removeAttribute('href');
+  video.classList.add('video--enabled');
+}
+
+function parseMediaURL(media) {
+  let regexp = /https:\/\/i\.ytimg\.com\/vi\/([a-zA-Z0-9_-]+)\/maxresdefault\.jpg/i;
+  let url = media.src;
+  let match = url.match(regexp);
+
+  return match[1];
+}
+
+function createIframe(id) {
+  let iframe = document.createElement('iframe');
+
+  iframe.setAttribute('allowfullscreen', '');
+  iframe.setAttribute('src', generateURL(id));
+  iframe.classList.add('video__media');
+
+  return iframe;
+}
+
+function generateURL(id) {
+  let query = '?rel=0&showinfo=0&autoplay=1&mute=1';
+
+  return 'https://www.youtube.com/embed/' + id + query;
+}
+
+findVideos();

@@ -637,17 +637,20 @@ header {
   line-height: 28px;
   color: #262626;
   background: #ffffff;
+  -webkit-appearance: none;
   box-shadow: 13px 15px 50px rgba(77, 77, 77, 0.1);
   border-radius: 5px;
   transition: box-shadow 0.2s ease;
 }
 
 .input-text:hover {
+  -webkit-appearance: none;
   box-shadow: 13px 15px 50px rgba(77, 77, 77, 0.25);
   -webkit-box-shadow: 13px 15px 50px rgba(77, 77, 77, 0.25);
 }
 
 .input-text:focus {
+  -webkit-appearance: none;
   box-shadow: 13px 15px 50px rgba(77, 77, 77, 0.25), inset 0 0 0 2px rgba(77, 77, 77, 0.8);
   -webkit-box-shadow: 13px 15px 50px rgba(77, 77, 77, 0.25), inset 0 0 0 2px rgba(77, 77, 77, 0.8);
 }

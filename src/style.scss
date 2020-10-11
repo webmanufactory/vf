@@ -11,6 +11,9 @@ body {
 	font-style: normal;
 	background-color: $bg_color;
 }
+button {
+	font-family: $main_font;
+}
 h1, h2, h3, h4, h5, h6 {
 	font-family: $main_font;
 	font-weight: normal;
@@ -30,9 +33,6 @@ header {
 	& a {
 		color: $font_color;
 	}
-}
-.phone:hover {
-	border-bottom: 1px solid $title_color;
 }
 .socials {
 	a + a {
@@ -150,13 +150,17 @@ header {
 	margin-bottom: 50px;
 }
 .card {
-	border: 1px solid #F9F9F9;
+	border: none;
 	padding: 2rem;
 	background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #FFFFFF;
-	box-shadow: 13px 15px 50px rgba(77, 77, 77, 0.1);
 	border-radius: 5px;
 	min-height: 225px;
 	margin-bottom: 3rem;
+	transition: box-shadow 0.5s ease;
+}
+.card:hover,
+.card:focus {
+	box-shadow: 13px 15px 50px rgba(77, 77, 77, 0.1);
 }
 .card__text {
 	font-size: 3.2rem;
@@ -300,8 +304,8 @@ header {
 }
 .services__card-header {
 	display: flex;
-    justify-content: center;
-    align-items: flex-end;
+	align-items: flex-end;
+	padding: 0 7rem;
 	height: 370px;
 	border-radius: 5px 5px 0 0;
 }
@@ -330,10 +334,12 @@ header {
 	font-size: 3.2rem;
 	line-height: 1.2;
 	color: $title_color;
-	text-align: center;
 }
 .services__card-body {
 	padding: 2.5rem 7rem;
+	background: #fff;
+	border-radius: 5px;
+	transform: translateY(-5px);
 }
 .card-body__text {
 	font-size: 2rem;
@@ -347,24 +353,24 @@ header {
 	margin-top: auto;
 }
 .card-footer__button {
-	padding: 1.4rem 3.5rem;
+	padding: 1.4rem 3rem;
 	font-size: 2rem;
-	line-height: 2.8rem;
+	font-weight: 600;
+	line-height: 1.2;
 	color: $title_color;
-    background: transparent;
-    border: 3px solid #5D5EBD;
+	background: transparent;
+	box-shadow: 13px 15px 50px rgba(77, 77, 77, 0.1);
 	border-radius: 5px;
 	text-align: center;
 }
 .card-footer__link {
 	font-size: 2rem;
-	line-height: 2.8rem;
+	font-weight: 600;
+	line-height: 1.2;
 	color: $title_color;
+	opacity: 0.6;
 	background: transparent;
 	border-bottom: 1px solid transparent;
-}
-.card-footer__link:hover {
-	border-bottom: 1px solid $title_color;
 }
 .terms {
 	margin-bottom: 3rem;
@@ -383,8 +389,12 @@ header {
 	flex-direction: column;
 	align-items: center;
 	height: 100%;
-	box-shadow: 13px 15px 50px rgba(77, 77, 77, 0.1);
 	border-radius: 5px;
+	transition: box-shadow 0.5s ease;
+}
+.terms__card:hover,
+.terms__card:focus {
+	box-shadow: 13px 15px 50px rgba(77, 77, 77, 0.1);
 }
 .terms__card-title {
 	margin-bottom: 4rem;
@@ -395,12 +405,13 @@ header {
 }
 .terms__card-button {
 	margin-top: auto;
-	padding: 1.4rem 3.5rem;
+	padding: 1.4rem 6rem;
 	font-size: 2rem;
-	line-height: 2.8rem;
+	font-weight: 600;
+	line-height: 1.2;
 	color: $title_color;
     background: transparent;
-    border: 3px solid #5D5EBD;
+    box-shadow: 13px 15px 50px rgba(77, 77, 77, 0.1);
 	border-radius: 5px;
 	text-align: center;
 }
@@ -415,8 +426,8 @@ header {
 }
 .add-conditions__card-header {
 	display: flex;
-    justify-content: center;
-    align-items: flex-end;
+	align-items: flex-end;
+	padding: 0 2rem;
 	height: 370px;
 	border-radius: 5px 5px 0 0;
 }
@@ -434,6 +445,9 @@ header {
 }
 .add-conditions__card-body {
 	padding: 2rem;
+	background: #fff;
+	border-radius: 5px;
+	transform: translateY(-5px);
 }
 .add-conditions__card-footer {
 	display: flex;
@@ -487,7 +501,8 @@ header {
 .submit {
 	padding: 1.4rem 7.5rem;
 	font-size: 2rem;
-	line-height: 2.8rem;
+	font-weight: 600;
+	line-height: 1.2;
 	color: $title_color;
     background: transparent;
     box-shadow: inset 0 0 0 3px #5D5EBD;
